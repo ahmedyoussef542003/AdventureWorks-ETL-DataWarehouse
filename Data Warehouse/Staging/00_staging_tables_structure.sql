@@ -1,7 +1,16 @@
+/*******************************************************************************
+* Script Name: 01_create_staging_rawdata_tables.sql
+* Description: Creates the 10 raw staging tables under the 'rawdata' schema 
+*              to store the extracted data directly from the AdventureWorksLT source.
+* Author: Ahmed Youssef
+*******************************************************************************/
+
 USE AdventureWorks_Staging;
 GO
 
--- 1. Address
+------------------------------------------------------------------------
+-- 1. Staging Address Table
+------------------------------------------------------------------------
 DROP TABLE IF EXISTS rawdata.Stg_Address;
 CREATE TABLE rawdata.Stg_Address (
     AddressID INT NULL,
@@ -16,7 +25,9 @@ CREATE TABLE rawdata.Stg_Address (
     LoadedAt DATETIME DEFAULT GETDATE()
 );
 
--- 2. Customer
+------------------------------------------------------------------------
+-- 2. Staging Customer Table
+------------------------------------------------------------------------
 DROP TABLE IF EXISTS rawdata.Stg_Customer;
 CREATE TABLE rawdata.Stg_Customer (
     CustomerID INT NULL,
@@ -37,7 +48,9 @@ CREATE TABLE rawdata.Stg_Customer (
     LoadedAt DATETIME DEFAULT GETDATE()
 );
 
--- 3. CustomerAddress
+------------------------------------------------------------------------
+-- 3. Staging CustomerAddress Table
+------------------------------------------------------------------------
 DROP TABLE IF EXISTS rawdata.Stg_CustomerAddress;
 CREATE TABLE rawdata.Stg_CustomerAddress (
     CustomerID INT NULL,
@@ -48,7 +61,9 @@ CREATE TABLE rawdata.Stg_CustomerAddress (
     LoadedAt DATETIME DEFAULT GETDATE()
 );
 
--- 4. Product
+------------------------------------------------------------------------
+-- 4. Staging Product Table
+------------------------------------------------------------------------
 DROP TABLE IF EXISTS rawdata.Stg_Product;
 CREATE TABLE rawdata.Stg_Product (
     ProductID INT NULL,
@@ -69,7 +84,9 @@ CREATE TABLE rawdata.Stg_Product (
     LoadedAt DATETIME DEFAULT GETDATE()
 );
 
--- 5. ProductCategory
+------------------------------------------------------------------------
+-- 5. Staging ProductCategory Table
+------------------------------------------------------------------------
 DROP TABLE IF EXISTS rawdata.Stg_ProductCategory;
 CREATE TABLE rawdata.Stg_ProductCategory (
     ProductCategoryID INT NULL,
@@ -80,7 +97,9 @@ CREATE TABLE rawdata.Stg_ProductCategory (
     LoadedAt DATETIME DEFAULT GETDATE()
 );
 
--- 6. ProductDescription
+------------------------------------------------------------------------
+-- 6. Staging ProductDescription Table
+------------------------------------------------------------------------
 DROP TABLE IF EXISTS rawdata.Stg_ProductDescription;
 CREATE TABLE rawdata.Stg_ProductDescription (
     ProductDescriptionID INT NULL,
@@ -90,7 +109,9 @@ CREATE TABLE rawdata.Stg_ProductDescription (
     LoadedAt DATETIME DEFAULT GETDATE()
 );
 
--- 7. ProductModel
+------------------------------------------------------------------------
+-- 7. Staging ProductModel Table
+------------------------------------------------------------------------
 DROP TABLE IF EXISTS rawdata.Stg_ProductModel;
 CREATE TABLE rawdata.Stg_ProductModel (
     ProductModelID INT NULL,
@@ -101,7 +122,9 @@ CREATE TABLE rawdata.Stg_ProductModel (
     LoadedAt DATETIME DEFAULT GETDATE()
 );
 
--- 8. ProductModelProductDescription
+------------------------------------------------------------------------
+-- 8. Staging ProductModelProductDescription Table
+------------------------------------------------------------------------
 DROP TABLE IF EXISTS rawdata.Stg_ProductModelProductDescription;
 CREATE TABLE rawdata.Stg_ProductModelProductDescription (
     ProductModelID INT NULL,
@@ -112,7 +135,9 @@ CREATE TABLE rawdata.Stg_ProductModelProductDescription (
     LoadedAt DATETIME DEFAULT GETDATE()
 );
 
--- 9. SalesOrderDetail
+------------------------------------------------------------------------
+-- 9. Staging SalesOrderDetail Table
+------------------------------------------------------------------------
 DROP TABLE IF EXISTS rawdata.Stg_SalesOrderDetail;
 CREATE TABLE rawdata.Stg_SalesOrderDetail (
     SalesOrderID INT NULL,
@@ -127,7 +152,9 @@ CREATE TABLE rawdata.Stg_SalesOrderDetail (
     LoadedAt DATETIME DEFAULT GETDATE()
 );
 
--- 10. SalesOrderHeader
+------------------------------------------------------------------------
+-- 10. Staging SalesOrderHeader Table
+------------------------------------------------------------------------
 DROP TABLE IF EXISTS rawdata.Stg_SalesOrderHeader;
 CREATE TABLE rawdata.Stg_SalesOrderHeader (
     SalesOrderID INT NULL,
